@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/agenda', Agenda::class)->name('agenda');
+Route::get('/agenda', Agenda::class)->middleware(['auth'])->name('agenda');
+
+require __DIR__.'/auth.php';
